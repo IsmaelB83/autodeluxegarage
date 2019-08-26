@@ -1,0 +1,196 @@
+.card {
+    width: 100%;  
+    padding: 0;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    text-align: center;
+}
+
+.card--lg {
+    margin: 15px 0;
+}
+
+.card--xs {
+    margin: 0;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent !important;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.10), 3px 6px 5px 0 rgba(0, 0, 0, 0.10);
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+
+.card h5 a {
+    color: #ffb400;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.card h5 a:hover {
+    color: #5a5959;
+}
+
+.card-thumbnail {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card.card--lg .card-thumbnail {
+    height: 225px !important;
+}
+
+.card-thumbnail img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-corner {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    padding: 0 10px 5px 15px;
+    border-radius: 0 0 0 50%;
+    background-color: white;
+    color: orange;
+}
+
+.card-corner:hover, 
+.card-corner:active {
+    box-shadow: -1px 1px 5px orange;
+    color: rgb(218, 121, 2) !important;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.card .card-body {
+    padding: 10px;
+    height: 100px;
+}
+
+.card .card-body .card-title {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 50px;
+    overflow: hidden;
+}
+
+.card .card-body .card-title h5 {
+    margin: 0;
+}
+
+.card .card-body img {
+    height: 17px;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+
+.card-footer {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    background-color: white;
+    border-top: none;
+}
+
+.card-footer ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 0;
+}
+
+.card-footer li {
+    float: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffb400;
+}
+
+.card-footer li span {
+    margin-left: 10px;
+    color: #5A5A5A  ;
+}
+
+.card-listing-price {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: #FFF;
+    padding: 7.5px 15px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, .6);
+    transition: all 0.9s ease-in-out;
+}
+
+.card-listing-price span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    display: block;
+}
+
+.card-thumbnail--xs {
+    height: 75px;
+    width: 115px;
+    border-radius: 5px;
+}
+
+.card.card--xs{
+    padding: 2px 0;
+}
+
+.card-body--xs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2px 15px;  
+}
+
+.card-body--xs h5 {
+    text-align: left;
+    margin: 0 0 3px 0;
+}
+
+.card-body--xs h5 a {
+    font-size: .80rem !important;
+}
+
+.card-body--xs h5 a,
+.card-body--xs small, 
+.card-body--xs p {
+    margin-top: 1px;
+}
+
+.card-body--xs h5 a:hover {
+    color: rgb(187, 137, 0);
+}

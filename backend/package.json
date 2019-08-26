@@ -1,0 +1,35 @@
+{
+  "name": "autodeluxe-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.5",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "puppeteer": "^1.15.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "simple-node-logger": "^18.12.22"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsmaelB83/autodeluxe-garage-api.git"
+  },
+  "author": "Ismael Bernal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsmaelB83/autodeluxe-garage-api/issues"
+  },
+  "homepage": "https://github.com/IsmaelB83/autodeluxe-garage-api#readme"
+}

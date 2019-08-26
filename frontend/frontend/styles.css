@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.landing-page {
+    height: 100vh;
+    color: #979797de;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: 
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1), 
+            rgba(0, 0, 0, .75) 50%, 
+            rgba(0, 0, 0, .3) 75%
+        ),
+        url('/assets/img/landing_hero.jpg');
+}
+
+.header-login {
+    align-self: center;
+}
+
+.footer-login {
+    align-self: center;
+}
+
+/* Card login */
+.card {
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-img img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px 20px;
+    background-color: #1A1A1A;
+}
+
+.card-body h3 {
+    text-align: left;
+    font-weight: 300;
+}
+
+.card-body ul {
+    list-style: none;
+    text-align: left;
+}
+
+.card-body ul li {
+    position: relative;
+    padding-left: 35px;
+    margin: 20px 0;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.card-body ul li:before {
+    border-right: .125em solid #00a3da;
+    border-top: .125em solid #00a3da;
+    content: "";
+    height: 1em;
+    width: .5em;
+    display: block;
+    top: 50%;
+    transform: scaleX(-1) rotate(135deg);
+    transform-origin: left top;
+    position: absolute;
+    top: .55em;
+    left: 0;
+}
+
+/* Titulos */
+.title {
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 8px;
+}
+
+.create-account h3 {
+    font-weight: 300;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn.btn-fill {
+    background-color: #007DA7 !important;
+    border: 2px solid #007DA7;
+    color: wheat;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.btn.btn-fill:hover {
+    background-color: rgb(22, 134, 165) !important;
+    border-color: rgb(22, 134, 165) !important;
+}
+
+.btn-outline {
+    color: wheat;
+    border: 2px solid wheat;
+    width: 250px;
+}
+
+.btn-outline:hover {
+    background-color: #007DA7;
+    border-color: #007DA7;
+}
+
+.login-form input {
+    border: .0625rem solid #828282;
+    border-radius: 0;
+    background-color: #dcdcdc;
+    color: #000;
+    padding: 0 .5rem;
+    height: 3rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.login-form .label-sm {
+    margin-bottom: .3125rem;
+    color: #a1a1a1;
+    font-weight: 500;
+    font-size: 13px;
+    align-self: flex-start;
+    
+}
+
+.login-form input[type='mail'], 
+.login-form input[type='password'] {
+    width: 100%;
+}
+
+.remind {
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 300;
+    color: #007DA7;
+}
+
+.remind:hover {
+    color: rgb(22, 134, 165) !important;
+}
+
+.logo {
+    width: 50px;
+}

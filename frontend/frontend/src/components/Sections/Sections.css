@@ -1,0 +1,77 @@
+/* Section containers */
+.landing-page {
+    height: 100vh;
+    position: relative;
+}
+
+.contentCookies {
+    padding-top: 200px;
+}
+
+/* SECTION TITLES */
+.main-title {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title-h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    max-width: 700px;
+    color: #333;
+    font-weight: 700;
+    position: relative;
+    line-height: 30px;
+    padding: 0 0 20px 0;
+    margin: 0 0 35px;
+    text-align: center;
+    border-bottom: 5px solid orange;
+}
+
+.main-title-p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    word-spacing: 3px;
+    line-height: 30px;
+    color: #808080;
+}
+
+/* Texts */
+.cookiesText {
+    font-weight: 300;
+    font-size: 1.2rem;
+    word-spacing: 3px;
+    line-height: 30px;
+    color: #808080;
+}
+
+.cookiesText ul {
+    margin-top: 20px;
+}
+
+.cookiesText ul li {
+    margin: 10px;
+}
+
+.cookiesText span {
+    font-weight: bold; 
+    text-transform: uppercase;  
+}
+
+.cookiesTitle {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: black;
+    margin: 35px 0 15px 0;
+}
+
+@media screen and (orientation:landscape) and (max-height: 600px) {
+    .landing-page {
+        height: 600px;
+    }    
+}

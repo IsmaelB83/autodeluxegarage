@@ -1,0 +1,49 @@
+{
+  "name": "autodeluxe",
+  "author": "Ismael",
+  "license": "MIT",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "bootstrap": "^4.3.1",
+    "create-react-app": "^2.1.8",
+    "google-maps-react": "^2.0.2",
+    "i": "^0.3.6",
+    "npm": "^6.9.0",
+    "nuka-carousel": "^4.5.4",
+    "react": "^16.8.6",
+    "react-cookie-consent": "^2.3.1",
+    "react-device-detect": "^1.6.2",
+    "react-dom": "^16.8.6",
+    "react-images": "^0.5.19",
+    "react-paginate": "^6.3.0",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-scroll-to-component": "^1.0.2",
+    "react-waypoint": "^9.0.2",
+    "reactstrap": "^8.0.0",
+    "redux": "^4.0.1",
+    "serve": "^11.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {},
+  "proxy": "http://localhost:8443"
+}

@@ -1,0 +1,21 @@
+#pagescroller {
+    background: #ffb400;
+    position: fixed;
+    z-index: 5;
+}
+
+#pagescroller {
+    animation-duration: .3s;
+    animation-fill-mode: both;
+    animation-name: fadeInRight;
+    animation-delay: .2s;
+    cursor: pointer;
+    color: #FFF;
+    padding: 10px 11px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px; 
+}

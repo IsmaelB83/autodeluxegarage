@@ -1,0 +1,128 @@
+/* Styles */
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+    padding: 10px !important;
+    border-bottom: 2px solid orange;
+    z-index: 5;
+    flex-flow: column wrap !important;
+    transition: all .3s ease-in;
+    transform: translateY(0);
+}
+
+.navbar.navbar--reduced {
+    border: none;
+}
+
+.navbar.navbar--hide {
+    transform: translateY(-100%);
+}
+
+.navbarsocial {
+    height: 100%;
+    transition: opacity .5s, all .2s;
+}
+
+.navbarsocial.navbarsocial--hide {
+    opacity: 0;
+    transform: translateY(200%);
+    display: none;
+}
+
+.hide {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+ }
+ 
+.navbar > .container {
+    flex-flow: column nowrap !important;
+}
+
+.navbar.navbar--reduced > .container {
+    flex-flow: row wrap !important;
+}
+
+.navbar > .container > .navbar--first {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap !important;
+    justify-content: space-between !important;
+}
+
+.navbar > .container > .navbar--last {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap !important;
+    align-content: space-around !important;
+}
+
+.navbar.navbar--reduced > .container > .navbar--first,
+.navbar.navbar--reduced > .container > .navbar--last {
+    width: auto;
+}
+
+.navbar-logo {
+    padding: 0;
+    width: 100%;
+    transition: all .4s ease-in;
+}
+
+.navbar.navbar--reduced .navbar-logo {
+    width: 350px;
+}
+
+.navbar .navbar-brand {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.navbar .navbar-nav .nav-item a {
+    padding: 8px 20px;
+    padding-bottom: 0;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.navbar .navbar-nav .nav-item a:last-child {
+    padding-right: 0;
+}
+
+.navbar .navbar-nav .nav-item a:active,
+.navbar .navbar-nav .nav-item a:hover, 
+.navbar .navbar-nav .nav-item a:focus {
+    color: #ffb400;
+}
+
+/* Animations */
+
+/* Responsive */
+@media (max-width: 991px) {
+    .navbar .container .navbar--first {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .navbar-logo,
+    .navbar.navbar--reduced .navbar-logo {
+        width: 275px !important;
+    }
+
+    .navbar-toggler {
+        padding: .15rem .50rem !important;
+        font-size: .9rem !important;
+        line-height: .9rem !important;
+    }
+}

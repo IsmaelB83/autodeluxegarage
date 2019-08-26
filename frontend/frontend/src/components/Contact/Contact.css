@@ -1,0 +1,91 @@
+.form-contacto input {
+    width: 100%;
+    padding: 10px 17px;
+    font-size: 1rem;
+    border: 1px solid #e8e7e7;
+    outline: none;
+    color: #6c6c6c;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 3px;
+}
+
+.form-contacto textarea {
+    min-height: 200px;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 30px;
+}
+
+.media .media-left {
+    margin-right: 20px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.media .media-left:first-child {
+    width: 55px;
+    font-size: 24px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    color: #333;
+    border: 1px dashed #333;
+    display: block;
+}
+
+.media .media-body h4 {
+    margin: 0 0 6px 0;
+    color: #333;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.media .media-body p {
+    margin: 0;
+    padding: 3px 0;
+    text-align: left;
+    color: #5a5959;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.media .media-body span {
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: 1.5px;
+}
+
+.contact-map {
+    margin-top: 10px;
+    width: 100%;
+    height: 400px;  
+    position: relative;
+}
+
+.about a[href^="tel:"], a[href^="mailto:"], .media-body a {
+    color: orange;
+    text-decoration: none;
+}
+
+.about a[href^="tel:"]:hover, a[href^="mailto:"]:hover, .media-body a:hover {
+    color: orangered;
+    text-decoration: none;
+}
+
+.about a[href^="tel:"]:before {
+    content: "\260e";
+    margin-right: 8px;
+}
+
+.about a[href^="mailto:"]:before {
+    content: "\2709";
+    margin-right: 8px;
+}

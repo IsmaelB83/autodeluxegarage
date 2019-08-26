@@ -1,0 +1,35 @@
+.about-card {
+    max-width: 300px !important;
+    margin: 0 auto;
+}
+
+.about-card h4 {
+    color: #ffb400; 
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: block;
+    height: 48px;
+    width: 150px;
+    margin: 25px auto;
+}
+
+.about-card i {
+    background: #ffb400;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 2rem;
+    display: inline-block;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: rgba(50, 50, 50, 0.11) 0 5px 2px 0;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    color: #5a5959;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 23px;
+}

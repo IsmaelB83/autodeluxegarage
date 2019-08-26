@@ -1,0 +1,10 @@
+/* Styles */
+.about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0px;
+    padding-top: 25px;
+}

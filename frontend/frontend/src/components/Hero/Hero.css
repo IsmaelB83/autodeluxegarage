@@ -1,0 +1,230 @@
+.hero {
+    background-color: black;
+    display: grid;
+    text-align: center;
+    top: 0;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: var(--var-height-navbar-xl);
+}
+
+.hero-content h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 3rem;
+    color: white;
+}
+
+.hero-content h1 span {
+    font-weight: 700;
+}
+
+.hero-content h1 span:last-child {
+    color: #ffb400;
+}
+
+.hero-img {
+    height: 100vh;  
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-panel-text {
+    background-color: rgba(192, 166, 166, 0.2);
+    padding: 35px 50px;
+    max-width: 1024px;
+    text-align: center;
+    color: white;
+}
+
+.hero-panel-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-panel-text p {
+    position: relative;
+    padding-top: 25px;
+    padding-left: 80px;
+    text-align: left;
+}
+
+.hero-panel-text p cite {
+    font-size: 1.5rem;
+}
+
+.hero-panel-text p cite::before {
+    position: absolute;
+    content: '❝';
+    display: block;
+    top: -2.5rem;
+    left: -2rem;
+    font-size: 10rem;
+    color: #ffb400;
+}
+
+.hero-buttons {
+    margin-bottom: 50px;
+}
+
+.hero-buttons a:first-child {
+    margin-right: 50px;
+}
+
+.logo-coches-net { 
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 11rem;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid white;
+    transition: all .1s ease-in;
+}
+
+.logo-coches-net:hover {
+    border: 1px solid orange;
+    box-shadow: 3px 3px 6px white;
+}
+
+.logo-coches-net:active {
+    box-shadow: 1px 2px 6px white;
+    transform: translateX(1px) translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 823px) {   
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-panel-text {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .hero-buttons a:first-child {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-content {
+        padding-top: calc(var(--var-height-navbar-xs) + 20px);
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-img {
+        object-fit: fill;
+    }
+
+    .hero-panel-text {
+        background-color: transparent;
+        margin-top: 20px;
+        padding: 0 25px;
+    }
+
+    .hero-panel-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-panel-text p {
+        display: none;
+    }
+
+    .hero-panel-text p cite {
+        font-size: 1.25rem;
+    }
+
+    .hero-panel-text p cite::before {
+        top: -2rem;
+        left: -.75rem;
+        font-size: 7rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+    }
+
+    .hero-buttons a:first-child {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-content {
+        padding: 10px;
+        padding-top: calc(var(--var-height-navbar-xs));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+    
+    .hero-panel-text {
+        background-color: transparent;
+        padding: 0 15px;
+    }
+
+    .hero-panel-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .hero-buttons a:first-child {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-buttons {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .hero-buttons a:first-child {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}

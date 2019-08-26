@@ -1,0 +1,113 @@
+.testimonios-wrapper {
+    position: relative;
+}
+
+.testimonios {
+    height: 400px;
+    overflow: hidden;
+    position: static;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.testimonios-overlap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.testimonios-caroussel {
+    position: relative;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.testimonios-caroussel h1 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 34px;
+    margin: 0 0 30px;
+}
+
+.testimonios-caroussel blockquote {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 33px;
+    font-style: italic;
+}
+
+.testimonios-overlap .author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonios-caroussel img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+}
+
+.testimonios-caroussel h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #c7c1c1;
+}
+
+.caroussel-slider {
+    font-size: 2.2rem;
+    color: white;
+    cursor: pointer;
+    width: 35px;
+    line-height: 35px;
+    position: absolute;
+    top: 65%;
+    transform: scale(1.1, 1.1);
+    transition: all 0.1 ease;
+}
+
+.caroussel-slider:hover {
+    color: orange;
+    transform: scale(1, 1);
+}
+
+.caroussel-slider:active,
+.caroussel-slider:focus {
+    transform: translateY(1px);
+}
+
+.caroussel-slider.caroussel-slider-left {
+    left: 20px;
+}
+
+.caroussel-slider.caroussel-slider-right {
+    right: 20px;
+}
+
+@media (max-width: 3205px) {
+}
