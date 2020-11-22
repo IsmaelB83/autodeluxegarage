@@ -58,7 +58,8 @@ class FooterAux extends React.Component {
                             <a className="footer-link" href={this.props.hrefs[1]} onClick={this.navigate.bind(this)}>Vehículos</a>
                             <a className="footer-link" href={this.props.hrefs[2]} onClick={this.navigate.bind(this)}>Sobre nosotros</a>
                             <a className="footer-link" href={this.props.hrefs[3]} onClick={this.navigate.bind(this)}>Contactar</a>
-                            <a className="footer-link" href={this.props.hrefs[4]} onClick={this.navigate.bind(this)}>Política de cookies</a>
+                            <a className="footer-link" href={this.props.hrefs[4]} onClick={this.navigate.bind(this)}>Vendidos</a>
+                            <a className="footer-link" href={this.props.hrefs[5]} onClick={this.navigate.bind(this)}>Política de cookies</a>
                         </Col>
                         { !this.props.loading && 
                             <Col xs="12" sm="12" lg="4" className="footer-item mt-3 mt-lg-0">

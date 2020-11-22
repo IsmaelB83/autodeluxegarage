@@ -44,14 +44,17 @@
     cursor: not-allowed;
 }
 
+@media (min-width: 500px) {
+    .btn-md-inline {
+        display: inline !important;
+        width: auto !important;
+    }
+}
+
 @media (max-width: 500px) {
     .btn-main {
         padding: 15px 15px;
         font-size: 1rem;
-    }
-
-    .btn-xs-inline {
-        display: inline;
     }
 }
 
@@ -59,9 +62,5 @@
     .btn-main {
         padding: 10px 15px;
         font-size: .8rem;
-    }
-
-    .btn-xs-inline {
-        display: inline;
     }
 }

@@ -36,7 +36,7 @@ class HomeAux extends React.Component {
                 <div className="landing-page" ref={this.home}>
                     <NavBar id="navbar" 
                             scrollTo={this.scrollTo.bind(this)}
-                            hrefs={['#home', '#novedades', '#acerca' ,'#contacto']}
+                            hrefs={['#home', '#novedades', '#acerca', '#contacto', '/vendidos']}
                      />
                     <Hero id="hero" scrollTo={this.scrollTo.bind(this)} />
                 </div>
@@ -48,7 +48,7 @@ class HomeAux extends React.Component {
                 <Contact id="contacto" ref={this.contacto} />
                 <Footer id="footer" 
                         scrollTo={this.scrollTo.bind(this)}
-                        hrefs={['#home', '#novedades', '#acerca' ,'#contacto', '/cookies']}
+                        hrefs={['#home', '#novedades', '#acerca' ,'#contacto', '/vendidos', '/cookies']}
                 />  
                 <PageScroll id="pages-croller" ref={this.pageScroller} scrollTo={this.scrollTo.bind(this)} />
                 <CookieConsent/>

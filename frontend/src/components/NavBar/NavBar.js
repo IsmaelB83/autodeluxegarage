@@ -40,6 +40,9 @@ class NavBarAux extends React.Component {
                                 <NavLink href={this.props.hrefs[1]} onClick={this.navigate.bind(this)}>Vehículos</NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink href={this.props.hrefs[4]} onClick={this.navigate.bind(this)}>Vendidos</NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink href={this.props.hrefs[2]} onClick={this.navigate.bind(this)}>Sobre nosotros</NavLink>
                             </NavItem>
                             <NavItem>

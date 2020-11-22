@@ -12,19 +12,11 @@ import './Sections.css';
 
 export default class Cookies extends React.Component {
     
-    constructor(props) {
-        super(props);
-        this.pageScroller = React.createRef(); 
-        this.home = React.createRef();
-        this.state = {
-        };
-    }
-    
     render() {
         return (
             <div>
                 <NavBar id="navbar" 
-                        hrefs={['/', '/#novedades', '/#acerca' ,'/#contacto']}
+                        hrefs={['/', '/#novedades', '/#acerca' ,'/#contacto', '/vendidos']}
                 />                
                 <Container className="contentCookies">
                     <Row>
@@ -112,7 +104,7 @@ export default class Cookies extends React.Component {
                     </Row>
                 </Container>
                 <Footer id="footer" 
-                        hrefs={['/', '/#novedades', '/#acerca' ,'/#contacto', '/cookies']}
+                        hrefs={['/', '/#novedades', '/#acerca' ,'/#contacto', '/vendidos', '/cookies']}
                 />  
                 <CookieConsent/>
             </div>

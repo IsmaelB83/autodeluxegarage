@@ -46,8 +46,9 @@ export default class Hero extends React.Component {
                     <p className="fadeInUp animated d-none d-lg-block"><cite>Elige modelo, color, año, kms y extras. En menos de 10 días puedes tener el coche que estas buscando a un precio inmejorable. Y con garantía total de un año, en todos nuestros vehículos❞</cite></p>
                 </div>
                 <div className="hero-buttons">
-                    <Link className="btn-main btn-orange btn-orange-active btn-xs-inline" href="#novedades" onClick={this.props.scrollTo} title="Vehículos" size="lg"/>
-                    <Link className="btn-main btn-orange btn-xs-inline" href="#acerca" onClick={this.props.scrollTo} title="Sobre nosotros" size="lg"/>
+                    <Link className="btn-main btn-orange btn-orange-active btn-block btn-md-inline mr-md-3" href="#novedades" onClick={this.props.scrollTo} title="En venta" size="lg"/>
+                    <Link className="btn-main btn-orange btn-block btn-md-inline mr-md-3" href="/vendidos" onClick={this.props.scrollTo} title="Vendidos" size="lg"/>
+                    <Link className="btn-main btn-orange btn-block btn-md-inline" href="/#acerca" onClick={this.props.scrollTo} title="Sobre nosotros" size="lg"/>
                 </div>
             </div>
         </div>
