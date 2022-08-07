@@ -26,7 +26,6 @@ const Controller = {
         try {
             let car = await Car.findOne({id: req.params.id});
             if (!car) {
-                console.log(req);
                 res.json( { result: 'error', description: 'not found'} );
                 return;
             } 
@@ -38,8 +37,14 @@ const Controller = {
     },
     sold: async (req, res) => {
         try {
-            fs.readdir(`${process.env.PUBLIC_URL}/img/vendidos/`, (err, files) => console.log(files))
-            res.json( { result: 'ok', count: 1, results: car } );
+            fs.readdir(`${process.env.STATICS}/sold`, (err, files) => {
+                if (err) 
+                    return res.json( { result: 'error', description: err} );
+                const results = []
+                for (let i = 0; i < files.length; i++)
+                    files[i] = `${process.env.API}/public/sold/${files[i]}`
+                res.json( { result: 'ok', count: files.length, results: files } );
+            });
         } catch (error) {
             res.json( { result: 'error', description: error.description} );
             log.fatal(error);

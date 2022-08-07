@@ -3,7 +3,6 @@ const cheerio = require('cheerio');
 const request = require('request-promise');
 // Import own modules
 const Car = require('../models/car');
-const config = require('../config.json');
 const log = require('../log/log');
 
 
@@ -11,14 +10,14 @@ class CochesNet {
 
     // Método para captura de anuncios desde carfactory, y actualización de mongo
     updateCars () {
-        log.info(`Iniciando proceso de carga de anuncios desde COCHES.NET... ${config.api}${config.contract}`);
+        log.info(`Iniciando proceso de carga de anuncios desde COCHES.NET... ${process.env.API_CARFACTORY}${process.env.CONTRACT}`);
         this.updateCarsAsync();
     }
 
     async updateCarsAsync () {
         try {
             // Obtengo el JSON de los coches publicados
-            let result = await this.getCarList(`${config.api}${config.contract}`);
+            let result = await this.getCarList(`${process.env.API_CARFACTORY}${process.env.CONTRACT}`);
             if (result) {
                 // Recorro el array grabando en base de datos los que no existan, y actualizando los que ya existen
                 for (let i = 0; i < result.length; i++) {
@@ -104,7 +103,7 @@ class CochesNet {
                     let hrefArray = item.attribs.href.split('/');
                     car.id = hrefArray[3];
                     // Url y nombre
-                    car.url = `${config.api}${item.attribs.href}`;
+                    car.url = `${process.env.API_CARFACTORY}${item.attribs.href}`;
                     car.name = $("#titprint", item).text().trim();
                     // Año, Combustible, Color, Kilometros y Precio
                     let rowTable = $(".fld_v", item);

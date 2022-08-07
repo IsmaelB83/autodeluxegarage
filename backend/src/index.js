@@ -1,8 +1,9 @@
+// Load env configuration
+require('dotenv').config()
 // Import Node Modules
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const multer = require('multer');
 const errorHandler = require('errorhandler');
 const fs = require('fs');
 const http = require('http');
@@ -10,7 +11,6 @@ const https = require('https');
 const cors = require('cors');
 // Import Own Modules
 const mongoose = require('./database');
-const config = require('./config.json');
 const routes = require('./routers/routers.js');
 const log = require('./log/log');
 
@@ -21,7 +21,6 @@ log.info('Starting API REST...');
 // Middlewares
 app.use(morgan('dev'));
 app.use(cors());
-app.use(multer({dest: path.join(__dirname, '../public/upload/temp')}).single('image'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
@@ -30,8 +29,8 @@ routes(app);
 
 // Static files
 app.use('/public', express.static(path.join(__dirname, '../public')));
-
-console.log(__dirname)
+// Store statics
+process.env.STATICS = path.join(__dirname, '../public');
 
 // Errorhandlers
 if ('development' === app.get('env')) {
@@ -41,8 +40,8 @@ if ('development' === app.get('env')) {
 // Servidor HTTP
 try {
     const httpServer = http.createServer(app);
-    httpServer.listen(config.portHttp, () => {
-        log.info(`HTTP OK - Server running on port ${config.portHttp}`);
+    httpServer.listen(process.env.HTTP, () => {
+        log.info(`HTTP OK - Server running on port ${process.env.HTTP}`);
     });        
 } catch (error) {
     log.fatal(`HTTP Error - Server not running: ${error.code} ${error.path}`);
@@ -59,8 +58,8 @@ try {
         ca: ca
     };
     const httpsServer = https.createServer(credentials, app);
-    httpsServer.listen(config.portHttps, () => {
-        log.info(`HTTPS OK - Server running on port ${config.portHttps}`);
+    httpsServer.listen(process.env.HTTPS, () => {
+        log.info(`HTTPS OK - Server running on port ${process.env.HTTPS}`);
     });
 } catch (error) {
     log.fatal(`HTTPS Error - Server not running: ${error.code} ${error.path}`);

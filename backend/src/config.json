@@ -1,8 +1,0 @@
-{
-    "api": "https://publicaciones.carfactory.es",
-    "contract": "/vehicles/11691",
-    "portHttp": 8081,
-    "portHttps": 8443,
-    "mongodb": "mongodb://localhost:27017/autodeluxegarage"
-
-}
