@@ -40,6 +40,9 @@ const Controller = {
             fs.readdir(`${process.env.STATICS}/sold`, (err, files) => {
                 if (err) 
                     return res.json( { result: 'error', description: err} );
+                // Sort files
+                files.sort().reverse();
+                // Create response
                 const results = []
                 for (let i = 0; i < files.length; i++) {
                     results.push({
@@ -48,6 +51,7 @@ const Controller = {
                         height: 3
                     })
                 }
+                // Response
                 res.json( { result: 'ok', count: results.length, results: results } );
             });
         } catch (error) {
