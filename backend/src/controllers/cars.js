@@ -41,9 +41,14 @@ const Controller = {
                 if (err) 
                     return res.json( { result: 'error', description: err} );
                 const results = []
-                for (let i = 0; i < files.length; i++)
-                    files[i] = `${process.env.API}/public/sold/${files[i]}`
-                res.json( { result: 'ok', count: files.length, results: files } );
+                for (let i = 0; i < files.length; i++) {
+                    results.push({
+                        src: `${process.env.API}/public/sold/${files[i]}`,
+                        width: 4,
+                        height: 3
+                    })
+                }
+                res.json( { result: 'ok', count: results.length, results: results } );
             });
         } catch (error) {
             res.json( { result: 'error', description: error.description} );
