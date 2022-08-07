@@ -13,8 +13,6 @@ import { store, actions } from './Store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/animate.min.css';
 import './index.css';
-/* Config */
-const config = require('./config.json');
 
 // Estructura de componentes react
 let reactComp = <Provider store={store}>
@@ -37,10 +35,20 @@ window.addEventListener('scroll', (e) => {
 // Llamar a la API con el listado de coches en venta
 retrieveCars();
 async function retrieveCars() {
-    let response = await fetch(config.api);
+    let response = await fetch(`${process.env.REACT_APP_API}/cars`);
     if (response.status === 200) {
         let json = await response.json();
         store.dispatch(actions.setCars(json.results));
+    }
+}
+
+// Llamar a la API con el listado de coches vendidos
+retrieveSoldCars();
+async function retrieveSoldCars() {
+    let response = await fetch(`${process.env.REACT_APP_API}/sold`);
+    if (response.status === 200) {
+        let json = await response.json();
+        store.dispatch(actions.setSoldCars(json.results));
     }
 }
 

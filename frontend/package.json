@@ -45,6 +45,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {},
   "proxy": "http://localhost:8443"
 }

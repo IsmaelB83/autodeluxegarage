@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 
 const initialState = {
     cars: [],
+    soldCars: [],
     loading: true,
     scrollY: 0,
     reduceNav: false,
@@ -17,6 +18,14 @@ export const actions = {
             payload: { 
                 cars: cars,
                 loading: false,
+            }
+        }
+    },
+    setSoldCars: (soldCars) => {
+        return {
+            type: 'SET_SOLD_CARS',
+            payload: { 
+                soldCars: soldCars,
             }
         }
     },
@@ -43,6 +52,10 @@ function charReducer(state, action) {
                 newState.loading = action.payload.loading;
             }
             return newState;
+        case "SET_SOLD_CARS":
+                newState = {...state};
+                newState.soldCars = action.payload.soldCars;
+                return newState;
         case "SET_SCROLL":
             let direction;
             newState = {...state};
