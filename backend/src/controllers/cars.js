@@ -1,5 +1,6 @@
 // Import Node Modules
 const $ = require('cheerio');
+const fs = require('fs');
 // Import own modules
 const Car = require('../models/car');
 const log = require('../log/log');
@@ -29,6 +30,15 @@ const Controller = {
                 res.json( { result: 'error', description: 'not found'} );
                 return;
             } 
+            res.json( { result: 'ok', count: 1, results: car } );
+        } catch (error) {
+            res.json( { result: 'error', description: error.description} );
+            log.fatal(error);
+        }
+    },
+    sold: async (req, res) => {
+        try {
+            fs.readdir(`${process.env.PUBLIC_URL}/img/vendidos/`, (err, files) => console.log(files))
             res.json( { result: 'ok', count: 1, results: car } );
         } catch (error) {
             res.json( { result: 'error', description: error.description} );

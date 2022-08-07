@@ -14,7 +14,6 @@ const config = require('./config.json');
 const routes = require('./routers/routers.js');
 const log = require('./log/log');
 
-
 // Creating express app
 const app = express();
 log.info('Starting API REST...');
@@ -31,6 +30,8 @@ routes(app);
 
 // Static files
 app.use('/public', express.static(path.join(__dirname, '../public')));
+
+console.log(__dirname)
 
 // Errorhandlers
 if ('development' === app.get('env')) {

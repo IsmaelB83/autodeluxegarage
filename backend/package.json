@@ -17,7 +17,6 @@
     "request-promise": "^4.2.4",
     "simple-node-logger": "^18.12.22"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.js"

@@ -1,5 +1,5 @@
 // Import node modules
-const $ = require('cheerio');
+const cheerio = require('cheerio');
 const request = require('request-promise');
 // Import own modules
 const Car = require('../models/car');
@@ -92,7 +92,8 @@ class CochesNet {
             // Variables locales
             const carList = [];
             // Obtengo la página de anuncios publicados
-            let result = await request(url);
+            const result = await request(url);
+            const $ = cheerio.load(result)
             // Listado de anuncios de la tabla principal
             let anuncios = Array.from($(".fblack", result));
             for (let i = 0; i < anuncios.length; i++) {
@@ -129,9 +130,10 @@ class CochesNet {
     async getCarDetails(url, car) {
         try {
             // Variables locales
-            let col, spans, details;
+            let col, spans;
             // Obtengo el HTML de la web
-            details = await request(url);
+            const details = await request(url);
+            const $ = cheerio.load(details)
             // Brand, Power
             col = $("#ftcol2", details);
             spans = $("li > span", col);

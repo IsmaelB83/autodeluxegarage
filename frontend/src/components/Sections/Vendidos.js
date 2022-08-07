@@ -10,7 +10,6 @@ import Footer from '../Footer/Footer';
 /* Import css */
 import './Sections.css';
 
-
 const photos = [
     { src: `${process.env.PUBLIC_URL}/img/vendidos/2020_1.jpeg`, width: 4, height: 3 },
     { src: `${process.env.PUBLIC_URL}/img/vendidos/2020_2.jpeg`, width: 4, height: 3 },

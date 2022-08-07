@@ -9,6 +9,7 @@ module.exports = app => {
     // API de la colección de coches
     router.get('/cars', ControllerCars.list);
     router.get('/cars/:id', ControllerCars.get);
+    router.get('/vendidos', ControllerCars.sold);
     // Paso el router a express
     app.use(router);
 }
