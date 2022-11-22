@@ -23,7 +23,7 @@
     "react-photo-gallery": "^8.0.0",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "react-scroll-to-component": "^1.0.2",
     "react-waypoint": "^9.0.2",
     "reactstrap": "^8.0.0",
