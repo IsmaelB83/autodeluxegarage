@@ -1,6 +1,7 @@
 // Load env configuration
 require('dotenv').config()
 // Import Node Modules
+const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
@@ -10,7 +11,7 @@ const http = require('http');
 const https = require('https');
 const cors = require('cors');
 // Import Own Modules
-const mongoose = require('./database');
+const CochesNet = require('./core/cochesnet');
 const routes = require('./routers/routers.js');
 const log = require('./log/log');
 
@@ -63,5 +64,22 @@ try {
     });
 } catch (error) {
     log.fatal(`HTTPS Error - Server not running: ${error.code} ${error.path}`);
+}
+
+// Connect to database and start scrapping
+try {
+    // Coencto a la base de datos
+    mongoose.connect(process.env.MONGODB, { useNewUrlParser: true })
+    .then (db => {
+        log.info(`Conectado a mongodb ${db.connection.host}:${db.connection.port}/${db.connection.name}`);
+        // Arranco la actualización de coches.net y lo programo para que se ejecute cada 30 minutos
+        let cochesNet = new CochesNet();
+        cochesNet.updateCars();
+        setInterval(() => {
+            cochesNet.updateCars.bind(cochesNet)();
+        }, 3600000);
+    }) 
+} catch (error) {
+    log.fatal(`Error conectando a mongo: ${error.errno} ${error.address}:${error.port}`);
 }
 
