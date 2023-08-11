@@ -53,7 +53,6 @@ async function retrieveSoldCars() {
         let response = await fetch(`${process.env.REACT_APP_API}/sold`);
         if (response.status === 200) {
             let json = await response.json();
-            console.log(json.results)
             store.dispatch(actions.setSoldCars(json.results));
         }   
     } catch (error) {
