@@ -16,7 +16,7 @@ export class MapContainer extends Component {
         <Map 
           google={this.props.google}
           zoom={15}
-          initialCenter={{ lat: 42.3493, lng: -3.7126 }}
+          initialCenter={{ lat: parseFloat(process.env.REACT_APP_MAPS_X), lng: parseFloat(process.env.REACT_APP_MAPS_Y) }}
         >
           <Marker
             onClick={this.onMarkerClick}
@@ -53,7 +53,7 @@ export class MapContainer extends Component {
   }
   
   export default GoogleApiWrapper({
-    apiKey: 'AIzaSyAe41b1Bd635J7ObvA6JoueI2DyFKCyFq8',
+    apiKey: process.env.REACT_APP_MAPS,
     language: 'es'
   })(MapContainer);
   

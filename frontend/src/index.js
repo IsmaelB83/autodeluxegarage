@@ -35,20 +35,29 @@ window.addEventListener('scroll', (e) => {
 // Llamar a la API con el listado de coches en venta
 retrieveCars();
 async function retrieveCars() {
-    let response = await fetch(`${process.env.REACT_APP_API}/cars`);
-    if (response.status === 200) {
-        let json = await response.json();
-        store.dispatch(actions.setCars(json.results));
+    try {
+        let response = await fetch(`${process.env.REACT_APP_API}/cars`);
+        if (response.status === 200) {
+            let json = await response.json();
+            store.dispatch(actions.setCars(json.results));
+        }     
+    } catch (error) {
+        console.log(error)
     }
 }
 
 // Llamar a la API con el listado de coches vendidos
 retrieveSoldCars();
 async function retrieveSoldCars() {
-    let response = await fetch(`${process.env.REACT_APP_API}/sold`);
-    if (response.status === 200) {
-        let json = await response.json();
-        store.dispatch(actions.setSoldCars(json.results));
+    try {
+        let response = await fetch(`${process.env.REACT_APP_API}/sold`);
+        if (response.status === 200) {
+            let json = await response.json();
+            console.log(json.results)
+            store.dispatch(actions.setSoldCars(json.results));
+        }   
+    } catch (error) {
+        console.log(error)
     }
 }
 
