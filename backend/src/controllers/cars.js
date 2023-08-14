@@ -37,22 +37,31 @@ const Controller = {
     },
     sold: async (req, res) => {
         try {
+            let end = false;
+            let current = parseInt(req.query.current);
+            let count = parseInt(req.query.count)
             fs.readdir(`${process.env.STATICS}/sold`, (err, files) => {
                 if (err) 
                     return res.json( { result: 'error', description: err} );
                 // Sort files
                 files.sort().reverse();
+                // Out of bounds
+                console.log(files.length)
+                if (current < 0) 
+                    current = 0
+                else if (current > files.length)
+                    return res.json( { result: 'error', description: 'Out of bounds' } );
+                else if (current + count > files.length) {
+                    count = files.length - current;
+                    end = true
+                }
                 // Create response
                 const results = []
-                for (let i = 0; i < files.length; i++) {
-                    results.push({
-                        src: `${process.env.API}/public/sold/${files[i]}`,
-                        width: 4,
-                        height: 3
-                    })
+                for (let i = current; i < current + count; i++) {
+                    results.push(`${process.env.API}/public/sold/${files[i]}`)
                 }
                 // Response
-                res.json( { result: 'ok', count: results.length, results: results } );
+                return res.json( { result: 'ok', start: parseInt(current), end, count: results.length, results: results } );
             });
         } catch (error) {
             res.json( { result: 'error', description: error.description} );
