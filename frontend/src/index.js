@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import Home from './components/Sections/Home';
 import Cookies from './components/Sections/Cookies';
 import Vendidos from './components/Sections/Vendidos';
+
 import { store, actions } from './Store';
 /* Import css */
 import 'bootstrap/dist/css/bootstrap.min.css';
