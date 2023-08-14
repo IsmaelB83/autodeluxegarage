@@ -1,12 +1,11 @@
 /* Import node modules */
 import React from 'react';
 import MapContainer from '../Map/map';
-import { Container, Row, Col, Form, FormGroup, Input } from 'reactstrap';       
+import { Container, Row, Col } from 'reactstrap';       
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 /* Import own modules */
-import Button from '../Buttons/CustomButton';
 import SectionTitle from '../Sections/SectionTitle';
 /* Import css */
 import './Contact.css';

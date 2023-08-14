@@ -12,10 +12,6 @@
     object-fit: cover;
 }
 
-.infinite-scroll-component__outerdiv {
-    text-align: center;
-}
-
-.infinite-scroll-component__outerdiv img{
-    width: 125px;
+.spinner {
+    width: 125px !important;
 }

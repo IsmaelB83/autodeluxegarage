@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux';
 /* Import own modules */
-import { TechLinks } from '../CircleLinks/CircleLinks';
 import { CustomCardSm } from '../CustomCard/CustomCard';
 /* Import assets */
 import logo from '../../assets/img/spinner.gif';

@@ -9,13 +9,14 @@ import Footer from '../Footer/Footer';
 /* Import css */
 import './Vendidos.css';
 /* Import assets */
-import loading from '../../assets/img/spinner2.gif';
+import spinner from '../../assets/img/spinner2.gif';
 
 const Vendidos = () => {
 
     const [images, setImages] = React.useState([]);
     const [loaded, setIsLoaded] = React.useState(false);
     const [hasMore, setHasMore] = React.useState(true);
+    const [loading, setIsLoading] = React.useState(true);
 
     React.useEffect(() => {
         fetchImages(images.count, 5);
@@ -23,6 +24,7 @@ const Vendidos = () => {
 
     const fetchImages = () => {
         const current = images.length>0?images.length:0;
+        setIsLoading(true);
         fetch(`${process.env.REACT_APP_API}/sold?current=${current}&count=${10}`)
         .then(response => {
             if (response.status === 200) {
@@ -30,6 +32,7 @@ const Vendidos = () => {
                 .then (res => {
                     setImages([...images, ...res.results]);
                     setIsLoaded(true);
+                    setIsLoading(false);
                     setHasMore(!res.end);
                 })
             } 
@@ -53,7 +56,6 @@ const Vendidos = () => {
                         dataLength={images}
                         next={() => fetchImages()}
                         hasMore={hasMore}
-                        loader={<img src={loading} alt="loading" />}
                     >
                         <div className="image-grid" style={{ marginTop: "30px" }}>
                             {loaded && images.map((image, index) => (
@@ -66,6 +68,11 @@ const Vendidos = () => {
                         </div>
                     </InfiniteScroll>
                     </Col>
+                    { loading &&
+                        <Col xs="12" sm="12" xl="4" className="footer-item mt-3 mt-md-0 text-center">
+                            <img className="spinner" src={spinner} alt="loading..." />
+                        </Col>
+                    }
                 </Row>
             </Container>
             <Footer id="footer" hrefs={['/', '/#novedades', '/#acerca' ,'/#contacto', '/vendidos', '/cookies']}/>  
