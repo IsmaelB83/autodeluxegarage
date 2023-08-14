@@ -33,19 +33,11 @@ class FooterAux extends React.Component {
                             <p>Pongase en contacto con nosotros por los siguientes medios:</p>
                             <div className="footer-contact-block">
                                 <FontAwesomeIcon icon="map-marker-alt"/>
-                                <p><span>Dirección: </span>C/ Francisco Salinas, 89 - 09003. Burgos</p>
+                                <p><span>Dirección: </span>C. López Bravo, 7, NAVE 51, 09001 Burgos, España</p>
                             </div>
                             <div className="footer-contact-block">
                                 <FontAwesomeIcon icon="envelope"/>
                                 <p><span>E-Mail: </span><a href="mailto: autodeluxegarage@hotmail.com">autodeluxegarage@hotmail.com</a></p>
-                            </div>
-                            <div className="footer-contact-block">
-                                <FontAwesomeIcon icon="phone"/>
-                                <p><span>Teléfono: </span><a href="tel:+34947880490">947 880 490</a></p>
-                            </div>
-                            <div className="footer-contact-block">
-                                <FontAwesomeIcon icon="phone"/>
-                                <p><span>Teléfono: </span><a href="tel:+34600971762">600 971 762</a></p>
                             </div>
                             <div className="footer-contact-block">
                                 <FontAwesomeIcon icon="phone"/>
@@ -100,11 +92,6 @@ class FooterAux extends React.Component {
                     <Row>
                         <Col xs="12">
                             <p>Página web desarrollada por Ismael Bernal <a href="mailto:ismaelbernal83@gmail.com">ismaelbernal83@gmail.com</a></p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs="12">
-                            <TechLinks className="mt-3 justify-content-center" iconClass="social-icon-sm"/>
                         </Col>
                     </Row>
                 </Container>

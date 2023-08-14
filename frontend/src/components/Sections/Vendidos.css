@@ -1,12 +1,3 @@
-.title {
-    font-family: 'Carter One';
-}
-
-.container {
-    margin-top: 50px;
-    text-align: center;
-}
-
 .image-grid {
     display: grid;
     grid-gap: 10px;
@@ -19,4 +10,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.infinite-scroll-component__outerdiv {
+    text-align: center;
+}
+
+.infinite-scroll-component__outerdiv img{
+    width: 125px;
 }
