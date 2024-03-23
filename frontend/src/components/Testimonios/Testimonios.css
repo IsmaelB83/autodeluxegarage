@@ -111,3 +111,12 @@
 
 @media (max-width: 3205px) {
 }
+
+.testimonios-caroussel h4 a {
+    color: white;
+}
+
+.testimonios-caroussel h4 a:hover {
+    color: orange;
+    text-decoration: none;
+}

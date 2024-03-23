@@ -9,8 +9,10 @@ export default class CustomLink extends React.Component {
         return (
             <a  href={this.props.href} 
                 className={this.props.className} 
-                onClick={this.props.onClick}>
+                onClick={this.props.onClick}
+                rel="noopener noreferrer">
                 {this.props.title}
+                
             </a>
         );
     };

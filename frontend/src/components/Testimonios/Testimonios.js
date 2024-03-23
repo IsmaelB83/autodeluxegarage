@@ -15,7 +15,7 @@ class Comentario extends React.Component {
                 <blockquote>{`❝ ${this.props.quote} ❞`}</blockquote>
                 <div className="author">
                     <img className='d-none' src={process.env.PUBLIC_URL + `/img/avatars/${this.props.img}`} alt="testimonio" />
-                    <h4>{this.props.author}</h4>
+                    <h4><a href={this.props.link} target="_blank" rel="noopener noreferrer">{this.props.author}</a></h4>
                 </div>
             </div>
         );
@@ -32,17 +32,29 @@ export default class Testimonios extends React.Component {
             animation: 'slideInUp',
             actual: 0,
             comentarios: [
-                {   quote: 'Les he comprado un Audi hace un mes y está perfecto de todo. Son muy profesionales y tienen buenos coches y mejores precios',
-                    img: 'avatar1.jpg',
-                    author: 'Juan Gomez'
+                {   quote: 'Muy recomendado!!, trato 100 por 100 profesional y cercano . Solución de cualquier problema , ya sea mecánico o estético.  gente que sabe lo que hace y se ve que son profesionales',
+                    author: 'Jesús Cañon',
+                    link: 'https://g.co/kgs/WxCgLmo'
                 },
-                {   quote: 'Buenos coches y buenos precios. Recomendable 100%',
-                    img: 'avatar2.jpg',
-                    author: 'Ivan Triana'
+                {   quote: 'Compré un Audi a6 avant  a capricho, muy buen trato de los propietarios del negocio, todo tipo de explicaciones y detalles a cerca del vehículo. Si te gusta este tipo de coches no hay duda que les comprarás uno.',
+                    author: 'Fernando A.',
+                    link: 'https://g.co/kgs/vZqZKNj'
                 },
-                {   quote: 'Un trato inmejorable, y una alta calidad. Grandes profesionales, siempre cumplen con los plazos indicados',
-                    img: 'avatar3.jpg',
-                    author: 'Claudia Mazuela'
+                {   quote: 'Acabo de comprar un Audi A6 Avant y va de cine ..la atención del personal ha sido estupenda, chico muy majo y atencioso. Lo recomiendo 100%',
+                    author: 'Bruno Duarte',
+                    link: 'https://g.co/kgs/v6xGxY3'
+                },
+                {   quote: 'Les he comprado un Audi A6 con kit RS6. Estado impecable y acabados que no he visto en ningun otro A6. La atencion ha sido perfecta. Los recomiendo sin ninguna duda',
+                    author: 'Dani6oEPO_AGE',
+                    link: 'https://g.co/kgs/J577iA9'
+                },
+                {   quote: 'Excelente la atención, explicaciones y dedicación de Jonathan, totalmente disponible, resolviendo las dudas que tenía, y realizando los cambios que queria. Si en el futuro necesito un vehículo, sin lugar a duda le contactaré de nuevo. Muy recomendable.',
+                    author: 'Ruben CC',
+                    link: 'https://g.co/kgs/oKw4VR2'
+                },
+                {   quote: 'Todo perfecto. Resolvió todas mis dudas. Un coche espectacular.',
+                    author: 'Javi M.C',
+                    link: 'https://g.co/kgs/HtSKS57'
                 }
             ]
         };
@@ -63,8 +75,8 @@ export default class Testimonios extends React.Component {
                             <Comentario 
                                 animation={this.state.animation}
                                 quote={this.state.comentarios[this.state.actual].quote}
-                                img={this.state.comentarios[this.state.actual].img}
                                 author={this.state.comentarios[this.state.actual].author}
+                                link={this.state.comentarios[this.state.actual].link}
                             />
                             <span className="caroussel-slider caroussel-slider-left" onClick={this.prevSlide.bind(this)}>
                                 <FontAwesomeIcon icon="arrow-alt-circle-left" />

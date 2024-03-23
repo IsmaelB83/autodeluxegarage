@@ -3,9 +3,7 @@
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
-    transition: all .2s ease-in-out;
     margin-right: 10px;
-    border: 1px solid white;
 }
 
 .social-icon-sm {
@@ -24,7 +22,6 @@
 
 .social-icon:hover {
     transform: scale(.95,.95);
-    box-shadow: .5px .5px 2px lightgray;
 }
 
 .social-icon:active,
