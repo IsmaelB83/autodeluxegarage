@@ -37,12 +37,11 @@ export default class Hero extends React.Component {
         <div className="hero">
             <img className={`hero-img ${this.state.animation} animated`} src={this.state.image} alt="hero" />
             <div className="hero-content">
-                <h1 className="fadeInDown animated"><span>TENEMOS</span> EL COCHE DE TUS <span>SUEÑOS</span></h1>
+                <h1 className="fadeInDown animated"><strong>TENEMOS</strong> EL COCHE DE TUS <span>SUEÑOS</span> <strong>HOY</strong></h1>
                 <div className="hero-panel-text">
-                   <p className="fadeInUp animated"><cite>Auto Deluxe Garage Expertos en AUDI A6 y otros modelos premium. ¡Encuentra elcoche de tus sueños al mejor precio hoy mismo!❞</cite></p>
-                   <a href="https://www.coches.net/concesionario/autodeluxegarage/" target="_blank" rel="noopener noreferrer">
-                        <img src="https://s.ccdn.es/images/logo-coches.svg" alt="coches.net" className="logo-coches-net"></img>
-                    </a>
+                   <p className="fadeInUp animated">
+                    <cite>Concesionario de vehículos premium. Especializados en Audi A6 Avant. Personalizamos tu coche a la carta. Ofrecemos financiación a medida y aceptamos coche como parte del pago.❞</cite>
+                   </p>
                 </div>
                 <div className="hero-buttons">
                     <Link className="btn-main btn-orange btn-orange-active btn-block btn-md-inline mr-md-3" href="#novedades" onClick={this.props.scrollTo} title="En venta" size="lg"/>

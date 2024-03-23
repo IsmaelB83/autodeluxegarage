@@ -59,6 +59,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: orange;
 }
 
 .testimonios-caroussel img {
@@ -113,10 +114,10 @@
 }
 
 .testimonios-caroussel h4 a {
-    color: white;
+    color: orange;
+    text-decoration: none;
 }
 
 .testimonios-caroussel h4 a:hover {
-    color: orange;
-    text-decoration: none;
+    color: white;
 }

@@ -14,7 +14,6 @@ class Comentario extends React.Component {
             <div className={`animated fast-05s ${this.props.animation}`}>
                 <blockquote>{`❝ ${this.props.quote} ❞`}</blockquote>
                 <div className="author">
-                    <img className='d-none' src={process.env.PUBLIC_URL + `/img/avatars/${this.props.img}`} alt="testimonio" />
                     <h4><a href={this.props.link} target="_blank" rel="noopener noreferrer">{this.props.author}</a></h4>
                 </div>
             </div>
