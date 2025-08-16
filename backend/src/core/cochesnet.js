@@ -108,11 +108,11 @@ class CochesNet {
                     // Año, Combustible, Color, Kilometros y Precio
                     let rowTable = $(".fld_v", item);
                     let spans = $("span",rowTable);
-                    car.year = spans[0].childNodes[0].data.trim();
-                    car.oil = spans[1].childNodes[0].data.trim();
-                    car.colour = spans[2].childNodes[0].data.trim();
-                    car.kilometers = spans[3].childNodes[0].data.trim() + 'km';
-                    car.price = spans[4].childNodes[0].data + '€';
+                    car.year = spans[0]?.children.find(c => c.type === 'text')?.data.trim() || '',
+                    car.oil = spans[1]?.children.find(c => c.type === 'text')?.data.trim() || '',
+                    car.colour = spans[2]?.children.find(c => c.type === 'text')?.data.trim() || '',
+                    car.kilometers = (spans[3]?.children.find(c => c.type === 'text')?.data.trim() || '') + 'km',
+                    car.price = (spans[4]?.children.find(c => c.type === 'text')?.data.trim() || '') + '€',
                     // Datos de detalle
                     car = await this.getCarDetails(car.url, car);
                     if (car.images.length > 0) car.image = car.images[0].src;
