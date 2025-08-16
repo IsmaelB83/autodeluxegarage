@@ -66,20 +66,59 @@ try {
     log.fatal(`HTTPS Error - Server not running: ${error.code} ${error.path}`);
 }
 
-// Connect to database and start scrapping
-try {
-    // Coencto a la base de datos
-    mongoose.connect(process.env.MONGODB, { useNewUrlParser: true })
-    .then (db => {
-        log.info(`Conectado a mongodb ${db.connection.host}:${db.connection.port}/${db.connection.name}`);
-        // Arranco la actualización de coches.net y lo programo para que se ejecute cada 30 minutos
+// --------------------
+// Conexión robusta a MongoDB
+// --------------------
+async function connectToMongo() {
+    const mongoURL = process.env.MONGODB;
+
+    mongoose.connection.on('connected', () => {
+        log.info(`MongoDB conectado: ${mongoose.connection.host}:${mongoose.connection.port}/${mongoose.connection.name}`);
+    });
+
+    mongoose.connection.on('error', (err) => {
+        log.error('Error en la conexión MongoDB:', err);
+    });
+
+    mongoose.connection.on('disconnected', () => {
+        log.warn('Conexión con MongoDB perdida. Reintentando en 5s...');
+        setTimeout(connectToMongo, 5000);
+    });
+
+    try {
+        await mongoose.connect(mongoURL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        });
+
+        // Solo iniciar scrapping si la conexión es exitosa
+        log.info('Iniciando scrapping de coches.net...');
         let cochesNet = new CochesNet();
         cochesNet.updateCars();
+
+        // Ejecuta cada hora
         setInterval(() => {
             cochesNet.updateCars.bind(cochesNet)();
         }, 3600000);
-    }) 
-} catch (error) {
-    log.fatal(`Error conectando a mongo: ${error.errno} ${error.address}:${error.port}`);
+
+    } catch (err) {
+        log.error(`Error conectando a MongoDB: ${err.message}`);
+        setTimeout(connectToMongo, 5000);
+    }
 }
 
+connectToMongo();
+
+// --------------------
+// Captura de errores globales de Node
+// --------------------
+process.on('uncaughtException', (err) => {
+    log.fatal('Uncaught Exception:', err);
+    // Opcional: pm2 se encarga de reiniciar el proceso si es fatal
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    log.fatal('Unhandled Rejection:', reason);
+});
