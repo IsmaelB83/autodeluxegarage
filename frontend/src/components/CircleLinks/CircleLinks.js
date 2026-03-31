@@ -8,7 +8,7 @@ export class SocialLinks extends React.Component {
     render() {
         return (
             <div className={`social-icons-panel ${this.props.className}`}>
-                <CircleLink url="https://www.instagram.com/autodeluxegarage_/" img="social/instagram.png" className={`social-icon`}/>
+                <CircleLink url="https://www.instagram.com/autodeluxegarage/" img="social/instagram.png" className={`social-icon`}/>
                 <CircleLink url="https://www.coches.net/concesionario/autodeluxegarage/" img="social/cochesnet.png" className={`social-icon`}/>
                 <CircleLink url="https://es.wallapop.com/app/user/jonathant-14109893-k3zl43xwk8jx/published" img="social/wallapop.png" className={`social-icon`}/>
                 <CircleLink url="whatsapp://send?phone=+34609072243" img="social/whatsapp.png" className={`social-icon`}/>
